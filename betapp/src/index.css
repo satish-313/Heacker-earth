@@ -136,3 +136,61 @@ main {
   height: 4rem;
   border-radius: var(--radius);
 }
+
+.parent-card{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: center;
+}
+
+.card{
+  margin: 1rem;
+  width: 10rem;
+  height: 10rem;
+  background-color: var(--clear-pink);
+  border-radius: var(--radius);
+}
+
+.card-won{
+  margin: 1rem;
+  width: 10rem;
+  height: 10rem;
+  background-color: var(--clr-green-dark);
+  border-radius: var(--radius);
+}
+
+.card img,.card-won img{
+  width: 4rem;
+  height: 4rem;
+  border-radius: var(--radius);
+}
+
+.card-first,.card-won .card-first{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+}
+
+.card-second h5{
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.wining-number{
+  margin: 1rem auto;
+  background-color: var(--clr-green-dark);
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+}
+
+.wining-number span{
+  display: flex;
+  justify-content: center;
+  padding-top: 3.25rem;
+  font-weight: bold;
+  font-size: 2rem;
+  color: var(--clr-white);
+}

@@ -1,18 +1,25 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 
-const PlayerList = ({ list,dispatch,index }) => {
-  const [checked, setChecked] = useState(false);
+import {useGlobalContext} from '../context'
+
+const PlayerList = ({ list }) => {
+  const {dispatch} = useGlobalContext()
+  const {Name,Bet,Price,image,status} = list
   
-  const {Name,Bet,Price} = list
-  
-  const checkme = (checked) => {
-    
+  const [checked,setChecked] = useState(false)
+
+  let index = list.id
+
+  const checkme = (s) => {
     let str
-    if(checked){
+ 
+    if(s){
+      // dispatch({ type: 'toggle', i, Name,Bet, Price, image,s})
       setChecked(false)
       str = 'remove'
     }
     else{
+      // dispatch({ type: 'toggle', i, Name,Bet, Price, image,s })
       setChecked(true)
       str = 'add'
     }
@@ -21,10 +28,10 @@ const PlayerList = ({ list,dispatch,index }) => {
   }
 
   return (
-    <tr key={index}>
-      <td><input type="checkbox" checked={checked} onChange={() => dispatch({ type: checkme(checked), index, Name, Bet, Price, image:list["Profile Image"] })} /></td>
+    <tr>
+      <td><input type="checkbox" checked={checked} onChange={() => dispatch({ type: checkme(checked), index, Name, Bet, Price, image,status})} /></td>
       <td>{Name}</td>
-      <td className="avatar"><img src={list["Profile Image"]} alt={Name} /></td>
+      <td className="avatar"><img src={image} alt={Name} /></td>
       <td>{Bet}</td>
       <td>{Price}</td>
     </tr>

@@ -10,6 +10,8 @@ import {useGlobalContext} from '../context'
 const List = ({}) => {
   const {dispatch,total,players,lists} = useGlobalContext();
 
+  console.log(players)
+
   return (
     <div className="page-1">
       <div className="player-list">
@@ -42,8 +44,8 @@ const List = ({}) => {
             </tr>
           </thead>
           <tbody>
-            {lists.map((list, index) => {
-              return (<PlayerList key={index} index={index} list={list} dispatch={dispatch} />)
+            {lists.map((list) => {
+              return (<PlayerList key={list.id} list={list} />)
             })}
           </tbody>
         </table>

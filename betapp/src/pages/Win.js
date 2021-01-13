@@ -13,19 +13,17 @@ const Win = () => {
 
   return(
     <div>
-      <div>
-        firstLine
+      <div className="parent-card">
         {firstLine.map((item) => {
-          return(<Card key={item.id}/>)
+          return(<Card key={item.id} item={item} number={randomnumber}/>)
         })}
       </div>
-      <div>
-        {randomnumber}
+      <div className="wining-number">
+        <span>{randomnumber}</span>
       </div>
-      <div>
-        secondLine
+      <div className="parent-card">
         {secondLine.map((item) => {
-          return(<Card key={item.id}/>)
+          return(<Card key={item.id} item={item} number={randomnumber}/>)
         })}
       </div>
     </div>
